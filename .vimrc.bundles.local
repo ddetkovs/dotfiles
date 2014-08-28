@@ -1,0 +1,29 @@
+Bundle 'bkad/CamelCaseMotion'
+"Bundle 'inkarkat/argtextobj.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'vim-scripts/a.vim'
+Bundle 'vim-scripts/c.vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'vim-scripts/gtags.vim'
+Bundle 'mhinz/vim-startify'
+Bundle 'JazzCore/ctrlp-cmatcher'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'matthewsimo/angular-vim-snippets'
+Bundle 'mattn/emmet-vim'
+
+Bundle 'nosami/Omnisharp'
+Bundle 'embear/vim-localvimrc'
+Bundle 'einars/js-beautify'
+
+" Motion {
+  " a, / i,
+  Bundle 'sgur/vim-textobj-parameter'
+
+  " id, ad, iD, and aD
+  Bundle 'machakann/vim-textobj-delimited'
+
+  " f/t motion
+  Bundle 'saihoooooooo/glowshi-ft.vim'
+" }
+Bundle 'mklabs/grunt.vim'

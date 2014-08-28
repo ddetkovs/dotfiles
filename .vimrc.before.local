@@ -1,0 +1,4 @@
+let g:spf13_bundle_groups=['general', 'programming', 'youcompleteme', 'javascript', 'html']
+let g:spf13_no_autochdir = 1
+let g:spf13_no_neosnippet_expand = 1
+let g:spf13_keep_trailing_whitespace = 1

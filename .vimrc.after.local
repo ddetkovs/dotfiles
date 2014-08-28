@@ -1,0 +1,4 @@
+if filereadable(expand(".vimrc"))
+    source .vimrc
+    echo "eeasd"
+endif
