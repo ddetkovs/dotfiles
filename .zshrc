@@ -1,3 +1,4 @@
+export TERM=xterm-256color
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -49,32 +50,10 @@ plugins=(nyan fasd rand-quote)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PHANTOMJS_BIN="/usr/bin/phantomjs"
-# export MANPATH="/usr/local/man:$MANPATH"
-
- # Preferred editor for local and remote sessions
- #if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- #else
-   #export EDITOR='vim'
- #fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-#
-
-
 source $ZSH_CUSTOM/plugins/opp/opp.zsh
 source $ZSH_CUSTOM/plugins/opp/opp/*.zsh
 
-
-stty -ixon
+export EDITOR='vim'
 
 bindkey -v
 # Use vim cli mode
@@ -92,5 +71,7 @@ bindkey '^w' backward-kill-word
 # # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
 
-alias mount_win="sudo mount -t vboxsf E_DRIVE /media/sf_e_drive"
+stty -ixon
 
+# User configuration
+source ~/.my_environment.sh
