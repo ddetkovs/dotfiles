@@ -148,10 +148,10 @@ au BufNewFile,BufRead *.xaml setf xml
 
 
 " Arrow keys{
-set t_ku=OA
-set t_kd=OB
-set t_kr=OC
-set t_kl=OD
+imap A <Up>
+imap B <Down>
+imap C <Right>
+imap D <Left>
 "}
 
 "}
