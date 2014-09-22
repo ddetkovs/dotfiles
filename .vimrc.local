@@ -114,7 +114,7 @@ let g:localvimrc_persistent = 2
 " }
 
 " JS-Beatify {
-au FileType javascript setlocal equalprg=js-beautify\ -w\ 81\ -f\ -
+au FileType javascript setlocal equalprg=js-beautify\ -f\ -
 au FileType html setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/html-beautify.js\ -w\ 80\ -f\ -
 " }
 "}
