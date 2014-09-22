@@ -6,6 +6,7 @@ if count(g:spf13_bundle_groups, 'general')
   Bundle 'myusuf3/numbers.vim'
   Bundle 'embear/vim-localvimrc'
 
+
   " Motion {
   " a, / i,
   Bundle 'sgur/vim-textobj-parameter'
@@ -18,6 +19,12 @@ if count(g:spf13_bundle_groups, 'general')
   Bundle 'saihoooooooo/glowshi-ft.vim'
 
   " }
+
+  " new
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'tpope/vim-sleuth'
+  " Bundle 'wellle/targets.vim'
+
 endif
 
 if count(g:spf13_bundle_groups, 'programming')
