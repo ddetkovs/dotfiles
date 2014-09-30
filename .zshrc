@@ -73,5 +73,7 @@ bindkey '^r' history-incremental-search-backward
 
 stty -ixon
 
+alias ls="ls --color"
+
 # User configuration
 source ~/.my_environment.sh
