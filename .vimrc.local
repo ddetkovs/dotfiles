@@ -10,6 +10,7 @@
 UnBundle 'scrooloose/nerdcommenter'
 UnBundle 'spf13/vim-autoclose'
 UnBundle 'mhinz/vim-signify'
+UnBundle 'vim-scripts/sessionman.vim'
 "UnBundle 'tpope/vim-fugitive'
 " }
 
@@ -25,8 +26,10 @@ command! -bang -nargs=* -complete=file AckCpp       call ack#Ack("grep<bang> -G 
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_follow_symlinks = 1
-" }
 
+nnoremap m :CtrlPMRUFiles<CR>
+nnoremap f :CtrlPFunky<CR>
+" }
 "Alternate.vim {
 let g:alternateNoDefaultAlternate = 1
 let g:alternateRelativeFiles = 1
@@ -58,7 +61,8 @@ let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
 "}
 
 "Startify {
-let g:startify_session_dir = '~/.vim/sessions'
+set viminfo='100,n$HOME/.vim/files/viminfo
+let g:startify_session_dir = '~/.vim/files/sessions'
 let g:startify_bookmarks = [
             \ '~/.vimrc.local', '~/.vimrc.bundles.local', './.gitignore',
             \ './.gitattributes'
