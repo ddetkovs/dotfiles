@@ -58,6 +58,10 @@ let g:syntastic_javascript_closure_compiler_path = '/usr/share/java/closure-comp
 let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
 "}
 
+"TypeScript{
+let g:syntastic_typescript_checkers = ['tslint'] ", 'closurecompiler']
+"}
+
 "}
 
 "Startify {
@@ -117,9 +121,12 @@ let g:localvimrc_count = 1
 let g:localvimrc_persistent = 2
 " }
 
-" JS-Beatify {
+" JS-Beautify {
+au FileType typescript setlocal equalprg=tsfmt\ /dev/stdin
 au FileType javascript setlocal equalprg=js-beautify\ -f\ -
 au FileType html setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/html-beautify.js\ -w\ 80\ -f\ -
+" }
+" TypeScript-tools{
 " }
 "}
 

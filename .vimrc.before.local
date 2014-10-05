@@ -3,6 +3,7 @@ let g:spf13_bundle_groups =
       \, 'programming'
       \, 'youcompleteme'
       \, 'javascript'
+      \, 'typescript'
       \, 'html'
       \, 'C'
       \]
