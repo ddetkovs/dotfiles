@@ -1,4 +1,6 @@
 # User configuration
+
+
 source ~/.zkbd/xterm-256color-:0
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
@@ -13,7 +15,7 @@ source ~/.zkbd/xterm-256color-:0
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+# export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -24,3 +26,4 @@ alias mount_win="sudo mount -t vboxsf E_DRIVE /media/sf_e_drive"
 
 eval `dircolors ~/.dir_colors`
 
+alias ls="ls --color"

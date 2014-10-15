@@ -50,8 +50,8 @@ plugins=(nyan fasd rand-quote)
 
 source $ZSH/oh-my-zsh.sh
 
-source $ZSH_CUSTOM/plugins/opp/opp.zsh
-source $ZSH_CUSTOM/plugins/opp/opp/*.zsh
+# source $ZSH_CUSTOM/plugins/opp/opp.zsh
+# source $ZSH_CUSTOM/plugins/opp/opp/*.zsh
 
 export EDITOR='vim'
 
