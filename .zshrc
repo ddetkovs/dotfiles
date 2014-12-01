@@ -46,8 +46,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(nyan fasd rand-quote)
+plugins=(fasd bower catimg common-aliases npm sudo tmux)
 
+ZSH_TMUX_AUTOSTART="true"
 source $ZSH/oh-my-zsh.sh
 
 # source $ZSH_CUSTOM/plugins/opp/opp.zsh
@@ -72,8 +73,6 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 stty -ixon
-
-alias ls="ls --color"
 
 # User configuration
 source ~/.my_environment.sh

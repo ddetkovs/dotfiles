@@ -1,6 +1,5 @@
 # User configuration
 
-
 source ~/.zkbd/xterm-256color-:0
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
@@ -26,4 +25,4 @@ alias mount_win="sudo mount -t vboxsf E_DRIVE /media/sf_e_drive"
 
 eval `dircolors ~/.dir_colors`
 
-alias ls="ls --color"
+export CYGWIN="nodosfilewarning winsymlinks"
