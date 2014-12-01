@@ -29,6 +29,7 @@ let g:ctrlp_follow_symlinks = 1
 
 nnoremap m :CtrlPMRUFiles<CR>
 nnoremap f :CtrlPFunky<CR>
+nnoremap b :CtrlPBuffer<CR>
 " }
 "Alternate.vim {
 let g:alternateNoDefaultAlternate = 1
@@ -128,6 +129,11 @@ au FileType html setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/html-b
 " }
 " TypeScript-tools{
 " }
+"
+" Vim-Commentary{
+autocmd FileType cs set commentstring=//\ %s
+" }
+
 "}
 
 " VIM config{
