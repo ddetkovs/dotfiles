@@ -48,6 +48,7 @@ if count(g:spf13_bundle_groups, 'programming')
     Bundle 'marijnh/tern_for_vim'
     Bundle 'einars/js-beautify'
     Bundle 'matthewsimo/angular-vim-snippets'
+    Bundle 'heavenshell/vim-jsdoc'
     " Bundle 'mklabs/grunt.vim'
   endif
 

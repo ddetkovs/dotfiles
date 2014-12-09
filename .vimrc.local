@@ -125,8 +125,15 @@ let g:localvimrc_persistent = 2
 " JS-Beautify {
 au FileType typescript setlocal equalprg=tsfmt\ /dev/stdin
 au FileType javascript setlocal equalprg=js-beautify\ -f\ -
-au FileType html setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/html-beautify.js\ -w\ 80\ -f\ -
+au FileType html setlocal equalprg=html-beautify\ -f\ -
 " }
+
+" Tern {
+let g:tern_show_argument_hints = 'on move'
+let g:tern_show_signature_in_pum = 1
+let g:tern_map_keys = 1
+" }
+
 " TypeScript-tools{
 " }
 "
