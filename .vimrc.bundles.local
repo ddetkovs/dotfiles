@@ -9,7 +9,7 @@ if count(g:spf13_bundle_groups, 'general')
 
   " Motion {
   " a, / i,
-  Bundle 'sgur/vim-textobj-parameter'
+  " Bundle 'sgur/vim-textobj-parameter'
 
   " id, ad, iD, and aD
   Bundle 'machakann/vim-textobj-delimited'
@@ -22,10 +22,15 @@ if count(g:spf13_bundle_groups, 'general')
 
   " new
   Bundle 'tpope/vim-unimpaired'
+  Bundle 'haya14busa/vim-asterisk'
 
 
  " Bundle 'tpope/vim-sleuth'
-  " Bundle 'wellle/targets.vim'
+  Bundle 'wellle/targets.vim'
+  Bundle 'haya14busa/incsearch.vim'
+  Bundle 't9md/vim-choosewin'
+  Bundle 'pelodelfuego/vim-swoop'
+
 
 endif
 
@@ -37,7 +42,6 @@ if count(g:spf13_bundle_groups, 'programming')
     Bundle 'nosami/Omnisharp'
   endif
 
-  Bundle 'mattn/emmet-vim'
 
   if count(g:spf13_bundle_groups, 'C')
     Bundle 'vim-scripts/a.vim'
@@ -50,6 +54,11 @@ if count(g:spf13_bundle_groups, 'programming')
     Bundle 'matthewsimo/angular-vim-snippets'
     Bundle 'heavenshell/vim-jsdoc'
     " Bundle 'mklabs/grunt.vim'
+  endif
+
+  if count(g:spf13_bundle_groups, 'html')
+      Bundle 'valloric/MatchTagAlways'
+      Bundle 'mattn/emmet-vim'
   endif
 
   if count(g:spf13_bundle_groups, 'typescript')

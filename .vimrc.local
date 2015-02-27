@@ -2,8 +2,8 @@
 " vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 " }
 
-"Plugins {
 
+" Plugins {
 " Vundle {
 "UnBundle 'Shougo/neocomplcache'
 "UnBundle 'Shougo/neosnippet'
@@ -31,6 +31,7 @@ nnoremap m :CtrlPMRUFiles<CR>
 nnoremap f :CtrlPFunky<CR>
 nnoremap b :CtrlPBuffer<CR>
 " }
+
 "Alternate.vim {
 let g:alternateNoDefaultAlternate = 1
 let g:alternateRelativeFiles = 1
@@ -42,8 +43,15 @@ let g:alternateExtensions_h = "C"
 " }
 
 "Syntastic {
-let g:syntastic_check_on_open = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 "C++ {
 let g:syntastic_c_checkers=['cppcheck']
@@ -54,8 +62,8 @@ let g:syntastic_h_checkers=['cppcheck']
 "}
 
 "JS{
-let g:syntastic_javascript_checkers = ['jshint'] ", 'closurecompiler']
-let g:syntastic_javascript_closure_compiler_path = '/usr/share/java/closure-compiler.jar'
+let g:syntastic_javascript_checkers = ['eslint'] ", 'closurecompiler']
+let g:syntastic_javascript_closurecompiler_path = '/usr/share/java/closure-compiler.jar'
 let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
 "}
 
@@ -63,6 +71,10 @@ let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
 let g:syntastic_typescript_checkers = ['tslint'] ", 'closurecompiler']
 "}
 
+"HTML {
+let g:syntastic_html_checkers = ['jshint']
+
+"}
 "}
 
 "Startify {
@@ -74,8 +86,15 @@ let g:startify_bookmarks = [
             \ ]
 "}
 
+"Over.vim {
+
+nmap : :OverCommandLine<CR>
+
+"}
+
+
 " YCM{
-let g:ycm_key_list_previous_completion=['<Up>']
+" let g:ycm_key_list_previous_completion=['<Up>']
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 " YouCompleteMe
 "let g:ycm_add_preview_to_completeopt=0
@@ -93,13 +112,10 @@ let g:OmniSharp_host = "http://10.0.2.2:8080"
 " }
 
 " UltiSnips {
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-"let g:UltiSnipsSnippetDirectories  = ["snips"]
-
+let g:UltiSnipsExpandTrigger="<tab>"
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
+    echo g:ulti_expand_res
     if g:ulti_expand_res == 0
         if pumvisible()
             return "\<C-n>"
@@ -113,7 +129,15 @@ function! g:UltiSnips_Complete()
     return ""
 endfunction
 
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<c-J>"
+let g:UltiSnipsJumpBackwardTrigger="<c-K>"
+let g:UltiSnipsListSnippets="<c-E>"
+" this mapping Enter key to <C-y> to chose the current highlight item 
+" and close the selection list, same as other IDEs.
+" CONFLICT with some plugins like tpope/Endwise
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 " }
 
@@ -124,8 +148,10 @@ let g:localvimrc_persistent = 2
 
 " JS-Beautify {
 au FileType typescript setlocal equalprg=tsfmt\ /dev/stdin
-au FileType javascript setlocal equalprg=js-beautify\ -f\ -
-au FileType html setlocal equalprg=html-beautify\ -f\ -
+au FileType javascript setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/js-beautify.js\ -f\ -
+au FileType html setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/html-beautify.js\ -f\ -
+au FileType less setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/css-beautify.js\ -f\ -
+au FileType css setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/css-beautify.js\ -f\ -
 " }
 
 " Tern {
@@ -134,6 +160,17 @@ let g:tern_show_signature_in_pum = 1
 let g:tern_map_keys = 1
 " }
 
+" vim-asterisk{
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
+"}
+
 " TypeScript-tools{
 " }
 "
@@ -141,6 +178,51 @@ let g:tern_map_keys = 1
 autocmd FileType cs set commentstring=//\ %s
 " }
 
+" vim-choosewin {
+nmap  <C-w>-  <Plug>(choosewin)
+" use overlay feature
+let g:choosewin_overlay_enable = 1
+
+" workaround for overlay font broken on mutibyte buffer.
+let g:choosewin_overlay_clear_multibyte = 1
+
+" tmux like overlay color
+let g:choosewin_color_overlay = {
+            \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
+            \ 'cterm': [ 25, 25 ]
+            \ }
+let g:choosewin_color_overlay_current = {
+            \ 'gui': ['firebrick1', 'firebrick1' ],
+            \ 'cterm': [ 124, 124 ]
+            \ }
+
+let g:choosewin_blink_on_land      = 0 " dont' blink at land
+let g:choosewin_statusline_replace = 0 " don't replace statusline
+let g:choosewin_tabline_replace    = 0 " don't replace tabline
+
+" }
+
+" incsearch.vim{
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+"}
+
+" vim-asterisk{
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
 "}
 
 " VIM config{

@@ -5,7 +5,6 @@ let g:spf13_bundle_groups =
       \, 'javascript'
       \, 'typescript'
       \, 'html'
-      \, 'C'
       \]
 let g:spf13_no_autochdir = 1
 let g:spf13_no_neosnippet_expand = 1
