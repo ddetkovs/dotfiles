@@ -1,0 +1,23 @@
+{
+
+  "plugins": ["esformatter-quotes"],
+
+  "quotes": {
+    "type": "single",
+    "avoidEscape": true
+  },
+
+  "indent" : {
+    "value": "    "
+  },
+
+  "whiteSpace": {
+    "before": {
+      "FunctionDeclarationOpeningBrace" : 1,
+      "FunctionExpressionOpeningBrace": 1
+    },
+    "after":{
+      "FunctionReservedWord": 1
+    }
+  }
+}
