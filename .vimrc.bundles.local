@@ -1,69 +1,65 @@
 if count(g:spf13_bundle_groups, 'general')
-  Bundle 'Raimondi/delimitMate'
-  Bundle 'Shougo/vimproc.vim'
-  Bundle 'mhinz/vim-startify'
-  Bundle 'JazzCore/ctrlp-cmatcher'
-  Bundle 'myusuf3/numbers.vim'
-  Bundle 'embear/vim-localvimrc'
-
+  Plugin 'Raimondi/delimitMate'
+  Plugin 'mhinz/vim-startify'
+  Plugin 'JazzCore/ctrlp-cmatcher'
+  Plugin 'myusuf3/numbers.vim'
+  Plugin 'embear/vim-localvimrc'
 
   " Motion {
   " a, / i,
-  " Bundle 'sgur/vim-textobj-parameter'
+  " Plugin 'sgur/vim-textobj-parameter'
 
   " id, ad, iD, and aD
-  Bundle 'machakann/vim-textobj-delimited'
-  "Bundle 'inkarkat/argtextobj.vim'
+  Plugin 'machakann/vim-textobj-delimited'
+  "Plugin 'inkarkat/argtextobj.vim'
 
   " f/t motion
-  Bundle 'saihoooooooo/glowshi-ft.vim'
-
+  Plugin 'saihoooooooo/glowshi-ft.vim'
   " }
 
   " new
-  Bundle 'tpope/vim-unimpaired'
-  Bundle 'haya14busa/vim-asterisk'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'haya14busa/vim-asterisk'
+  Plugin 'gabesoft/vim-ags'
 
+ " Plugin 'tpope/vim-sleuth'
+  Plugin 'wellle/targets.vim'
+  Plugin 'haya14busa/incsearch.vim'
+  Plugin 'pelodelfuego/vim-swoop'
 
- " Bundle 'tpope/vim-sleuth'
-  Bundle 'wellle/targets.vim'
-  Bundle 'haya14busa/incsearch.vim'
-  Bundle 't9md/vim-choosewin'
-  Bundle 'pelodelfuego/vim-swoop'
-
+  Plugin 'editorconfig/editorconfig-vim'
 
 endif
 
 if count(g:spf13_bundle_groups, 'programming')
 
-  Bundle 'vim-scripts/gtags.vim'
+  " Plugin 'vim-scripts/gtags.vim'
 
   if count(g:spf13_bundle_groups, 'C#')
-    Bundle 'nosami/Omnisharp'
+    Plugin 'nosami/Omnisharp'
   endif
 
 
   if count(g:spf13_bundle_groups, 'C')
-    Bundle 'vim-scripts/a.vim'
-    Bundle 'vim-scripts/c.vim'
+    Plugin 'vim-scripts/a.vim'
+    Plugin 'vim-scripts/c.vim'
   endif
 
   if count(g:spf13_bundle_groups, 'javascript')
-    Bundle 'marijnh/tern_for_vim'
-    Bundle 'einars/js-beautify'
-    Bundle 'matthewsimo/angular-vim-snippets'
-    Bundle 'heavenshell/vim-jsdoc'
-    " Bundle 'mklabs/grunt.vim'
+    Plugin 'marijnh/tern_for_vim'
+    Plugin 'einars/js-beautify'
+    Plugin 'matthewsimo/angular-vim-snippets'
+    Plugin 'millermedeiros/vim-esformatter'
   endif
 
   if count(g:spf13_bundle_groups, 'html')
-      Bundle 'valloric/MatchTagAlways'
-      Bundle 'mattn/emmet-vim'
+      Plugin 'valloric/MatchTagAlways'
+      Plugin 'mattn/emmet-vim'
   endif
 
   if count(g:spf13_bundle_groups, 'typescript')
-    Bundle 'leafgarland/typescript-vim'
-    Bundle 'clausreinke/typescript-tools'
+    Plugin 'leafgarland/typescript-vim'
+    Plugin 'clausreinke/typescript-tools'
   endif
 
 endif

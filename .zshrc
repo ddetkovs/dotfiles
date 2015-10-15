@@ -48,7 +48,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(fasd bower catimg common-aliases npm sudo tmux)
 
-ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOSTART="false"
 source $ZSH/oh-my-zsh.sh
 
 # source $ZSH_CUSTOM/plugins/opp/opp.zsh

@@ -11,9 +11,19 @@ UnBundle 'scrooloose/nerdcommenter'
 UnBundle 'spf13/vim-autoclose'
 UnBundle 'mhinz/vim-signify'
 UnBundle 'vim-scripts/sessionman.vim'
+UnBundle 'mileszs/ack.vim'
+UnBundle 'bling/vim-bufferline'
+UnBundle 'Lokaltog/vim-easymotion'
+UnBundle 'tpope/vim-haml'
+UnBundle 'kchmck/vim-coffee-script'
+UnBundle 'majutsushi/tagbar'
 "UnBundle 'tpope/vim-fugitive'
 " }
 
+" vim-airline{
+let g:airline#extensions#tabline#enabled = 1
+
+" }
 
 " AG search {
 "let g:agprg="ag -iG \".*\.[Ch]$\" --column"
@@ -63,8 +73,7 @@ let g:syntastic_h_checkers=['cppcheck']
 
 "JS{
 let g:syntastic_javascript_checkers = ['eslint'] ", 'closurecompiler']
-let g:syntastic_javascript_closurecompiler_path = '/usr/share/java/closure-compiler.jar'
-let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 "}
 
 "TypeScript{
@@ -75,6 +84,14 @@ let g:syntastic_typescript_checkers = ['tslint'] ", 'closurecompiler']
 let g:syntastic_html_checkers = ['jshint']
 
 "}
+
+"LESS{
+let g:syntastic_less_checkers = ['lessc']
+"}
+
+
+
+
 "}
 
 "Startify {
@@ -88,10 +105,13 @@ let g:startify_bookmarks = [
 
 "Over.vim {
 
-nmap : :OverCommandLine<CR>
+nmap <Leader>: :OverCommandLine<CR>
 
 "}
 
+" vim-ags {
+let g:ags_agexe = '/usr/local/bin/ag'
+"}
 
 " YCM{
 " let g:ycm_key_list_previous_completion=['<Up>']
@@ -148,7 +168,7 @@ let g:localvimrc_persistent = 2
 
 " JS-Beautify {
 au FileType typescript setlocal equalprg=tsfmt\ /dev/stdin
-au FileType javascript setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/js-beautify.js\ -f\ -
+au FileType javascript setlocal equalprg=esformatter
 au FileType html setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/html-beautify.js\ -f\ -
 au FileType less setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/css-beautify.js\ -f\ -
 au FileType css setlocal equalprg=node\ ~/.vim/bundle/js-beautify/js/bin/css-beautify.js\ -f\ -
@@ -225,6 +245,7 @@ map z#  <Plug>(asterisk-z#)
 map gz# <Plug>(asterisk-gz#)
 "}
 
+
 " VIM config{
 set completeopt-=preview
 
@@ -235,8 +256,8 @@ set softtabstop=2
 
 set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
 
-set ff=unix
-set ffs=unix,dos
+set ff=dos
+set ffs=dos,unix
 
 " move cto beginning of line
 inoremap <Home> <C-c>^i
