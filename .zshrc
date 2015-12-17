@@ -46,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fasd bower catimg common-aliases npm sudo tmux)
+plugins=(fasd bower catimg common-aliases npm sudo tmux git)
 
 ZSH_TMUX_AUTOSTART="false"
 source $ZSH/oh-my-zsh.sh
@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 # source $ZSH_CUSTOM/plugins/opp/opp.zsh
 # source $ZSH_CUSTOM/plugins/opp/opp/*.zsh
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # bindkey -v
 # Use vim cli mode

@@ -13,10 +13,14 @@ UnBundle 'mhinz/vim-signify'
 UnBundle 'vim-scripts/sessionman.vim'
 UnBundle 'mileszs/ack.vim'
 UnBundle 'bling/vim-bufferline'
+UnBundle 'jiangmiao/auto-pairs'
 UnBundle 'Lokaltog/vim-easymotion'
 UnBundle 'tpope/vim-haml'
 UnBundle 'kchmck/vim-coffee-script'
 UnBundle 'majutsushi/tagbar'
+UnBundle 'mattn/gist-vim'
+UnBundle 'briancollins/vim-jst'
+UnBundle 'luochen1990/rainbow'
 "UnBundle 'tpope/vim-fugitive'
 " }
 
@@ -198,40 +202,24 @@ map gz# <Plug>(asterisk-gz#)
 autocmd FileType cs set commentstring=//\ %s
 " }
 
-" vim-choosewin {
-nmap  <C-w>-  <Plug>(choosewin)
-" use overlay feature
-let g:choosewin_overlay_enable = 1
-
-" workaround for overlay font broken on mutibyte buffer.
-let g:choosewin_overlay_clear_multibyte = 1
-
-" tmux like overlay color
-let g:choosewin_color_overlay = {
-            \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
-            \ 'cterm': [ 25, 25 ]
-            \ }
-let g:choosewin_color_overlay_current = {
-            \ 'gui': ['firebrick1', 'firebrick1' ],
-            \ 'cterm': [ 124, 124 ]
-            \ }
-
-let g:choosewin_blink_on_land      = 0 " dont' blink at land
-let g:choosewin_statusline_replace = 0 " don't replace statusline
-let g:choosewin_tabline_replace    = 0 " don't replace tabline
-
-" }
 
 " incsearch.vim{
 " :h g:incsearch#auto_nohlsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
 "}
 
 " vim-asterisk{
@@ -250,14 +238,15 @@ map gz# <Plug>(asterisk-gz#)
 set completeopt-=preview
 
 set colorcolumn=80
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
 
 set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
 
 set ff=dos
 set ffs=dos,unix
+set nospell
 
 " move cto beginning of line
 inoremap <Home> <C-c>^i
